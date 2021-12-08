@@ -27,9 +27,9 @@ $sql = "SELECT 1 from product WHERE id >= 1 LIMIT 1";
 
 $stmt = $conn->prepare($sql);
 $stmt->execute();
-$dataExists = $stmt->fetchColumn();
+$data_exists = $stmt->fetchColumn();
 
-if ($dataExists == "1" ) {
+if ($data_exists == "1" ) {
 
     echo "Записи в таблицах существуют" . "<br>";
 
@@ -74,7 +74,7 @@ if ($dataExists == "1" ) {
     }
 
 }
-$conn = null;
+
 
 
 

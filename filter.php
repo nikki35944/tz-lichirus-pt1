@@ -14,10 +14,10 @@ if (isset($_POST['request'])) {
 
     $stmt = $conn->prepare($sql);
     $stmt->execute();
-    $dataExists = $stmt->fetchColumn();
+    $data_exists = $stmt->fetchColumn();
 
 
-    if ($dataExists) {
+    if ($data_exists) {
 
         foreach ($conn->query($sql) as $row) {
             echo '<tr>';
