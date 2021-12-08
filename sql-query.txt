@@ -1,0 +1,13 @@
+//Цикл mysql для создания 1млн строк в таблицах
+DELIMITER $$
+DROP PROCEDURE IF EXISTS dowhile$$
+CREATE PROCEDURE dowhile()
+BEGIN
+  DECLARE v1 INT DEFAULT 1;
+  WHILE v1 < 105 DO
+      INSERT INTO product (name, price, amount) SELECT name, price, amount FROM product LIMIT 10000;
+      INSERT INTO product_properties (product_id, type, value) SELECT product_id, type, value FROM product_properties LIMIT 10000;
+    SET v1 = v1 + 1;
+  END WHILE;
+END$$
+DELIMITER ;
